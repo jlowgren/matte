@@ -23,12 +23,12 @@ export default {
 }
 
 html {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0 auto;
   max-width: 50rem;
-  color: #333;
-  background: #efefef;
+  color: #fff;
+  background: #3b653d;
 }
 </style>

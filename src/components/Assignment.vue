@@ -1,8 +1,8 @@
 <template>
   <div :class="['assignment', { 'assignment--solved': solved }]">
-    <span class="assignment__number">{{ firstNumber }}</span>
-    {{ operator }}
-    <span class="assignment__number">{{ secondNumber }}</span> =
+    <span class="assignment__equation">
+      {{ firstNumber }} {{ operator }} {{ secondNumber }} =
+    </span>
     <input
       ref="input"
       type="number"
@@ -80,29 +80,34 @@ input::-webkit-inner-spin-button {
   width: 100%;
   font-size: inherit;
   font-family: inherit;
+  background: #329a37;
+  color: #333;
+  border: 0;
 }
 
-.assignment__input,
-.assignment__number {
-  margin: 0 1rem;
+.assignment__equation {
+  font-family: 'Chalkduster', Helvetica, sans-serif;
+  display: inline-block;
+  margin-right: 1rem;
+  white-space: nowrap;
 }
 
 /* Styling for a correctly answered assignment */
 .assignment--solved .assignment__input {
   background-color: lightgreen;
-  border: 0;
 }
 
 .assignment--solved::after {
-  content: "😍";
+  content: "👍";
   display: block;
   position: absolute;
   top: 0.125rem;
-  right: 1.5rem;
+  right: 1rem;
   animation: rotate 0.5s infinite alternate linear;
   transform: rotate(-10deg);
 }
 
+/* Animation */
 @keyframes rotate {
   100% {
     transform: rotate(10deg);
