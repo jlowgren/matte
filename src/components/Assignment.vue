@@ -1,14 +1,16 @@
 <template>
   <div :class="['assignment', { 'assignment--solved': solved }]">
     <span class="assignment__equation">
-      {{ firstNumber }} {{ operator }} {{ secondNumber }} =
+      {{ values[0] }} {{ operator }} {{ values[1] }} =
     </span>
     <input
+      v-if="!solved"
       ref="input"
       type="number"
       class="assignment__input"
       v-model.number="result"
       :disabled="solved">
+    <span v-else>{{ result }}</span>
   </div>
 </template>
 
@@ -46,9 +48,18 @@ export default {
   computed: {
     answer() {
       return Parser.evaluate(`x ${this.operator} y`, {
-        x: this.firstNumber,
-        y: this.secondNumber,
+        x: this.values[0],
+        y: this.values[1],
       });
+    },
+
+    values() {
+      return this.operator === '-'
+        ? [
+          Math.max(this.firstNumber, this.secondNumber),
+          Math.min(this.firstNumber, this.secondNumber),
+        ]
+        : [this.firstNumber, this.secondNumber];
     },
   },
 
@@ -93,24 +104,28 @@ input::-webkit-inner-spin-button {
 }
 
 /* Styling for a correctly answered assignment */
+.assignment--solved {
+  font-family: 'Chalkduster', Helvetica, sans-serif;
+}
+
 .assignment--solved .assignment__input {
   background-color: lightgreen;
 }
 
 .assignment--solved::after {
-  content: "👍";
+  content: "💃";
   display: block;
   position: absolute;
   top: 0.125rem;
   right: 1rem;
   animation: rotate 0.5s infinite alternate linear;
-  transform: rotate(-10deg);
+  transform: rotate(-5deg);
 }
 
 /* Animation */
 @keyframes rotate {
   100% {
-    transform: rotate(10deg);
+    transform: rotate(5deg);
   }
 }
 </style>

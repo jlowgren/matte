@@ -29,6 +29,7 @@ html {
   margin: 0 auto;
   max-width: 50rem;
   color: #fff;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
   background: #3b653d;
 }
 </style>
