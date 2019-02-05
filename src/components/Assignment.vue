@@ -89,11 +89,18 @@ input::-webkit-inner-spin-button {
 
 .assignment__input {
   width: 100%;
+  padding: 0.25rem;
   font-size: inherit;
-  font-family: inherit;
+  font-family: 'Chalkduster', Helvetica, sans-serif;
   background: #329a37;
   color: #333;
   border: 0;
+}
+
+.assignment__input:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px white;
+  border-radius: 0.125rem;
 }
 
 .assignment__equation {
@@ -113,7 +120,7 @@ input::-webkit-inner-spin-button {
 }
 
 .assignment--solved::after {
-  content: "💃";
+  content: "👍🏼";
   display: block;
   position: absolute;
   top: 0.125rem;
