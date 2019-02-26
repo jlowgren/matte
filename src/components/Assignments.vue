@@ -31,6 +31,7 @@ export default {
   methods: {
     nextAssignment() {
       this.assignments += 1;
+      window.scrollTo(0, document.body.scrollHeight);
     },
   },
 };
@@ -39,6 +40,7 @@ export default {
 <style scoped>
 .assignments {
   text-align: center;
+  padding-bottom: 10rem;
 }
 
 .assignments__heading {
@@ -54,6 +56,5 @@ export default {
 
 .assignments-enter, .assignments-leave-to {
   opacity: 0;
-  transform: translateY(-2rem);
 }
 </style>
