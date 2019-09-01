@@ -1,7 +1,7 @@
 <template>
   <div class="assignments">
     <h1 class="assignments__heading">
-      Matematikövningar
+      Math Training
     </h1>
     <form>
       <transition-group name="assignments" tag="div">

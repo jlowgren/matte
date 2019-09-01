@@ -1,6 +1,10 @@
 # matte
 
-> Math training for my kids
+> Math training for my son
+
+This is a math training application I made for my son, to help him learn the
+basics of math. In time he found more exciting math training apps elsewhere, so
+I'm leaving this here in its unfinished state.
 
 ## Build Setup
 

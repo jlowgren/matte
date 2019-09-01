@@ -1,7 +1,7 @@
 {
   "name": "matte",
   "version": "1.0.0",
-  "description": "Matematikträning",
+  "description": "Math training for my son",
   "author": "Joacim Löwgren <joacim.lowgren@gmail.com>",
   "private": true,
   "scripts": {
